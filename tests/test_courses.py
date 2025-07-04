@@ -1,6 +1,7 @@
 from playwright.sync_api import expect, Page
 
 def test_empty_courses_list(chromium_page_with_state: Page):
+
     chromium_page_with_state.goto("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses")
 
     course_title = chromium_page_with_state.get_by_test_id('courses-list-toolbar-title-text')
