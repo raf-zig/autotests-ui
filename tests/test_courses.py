@@ -45,7 +45,7 @@ def test_create_course(
     create_course_page.create_course_toolbar_view_component.check_visible(is_create_course_disabled=False)
     create_course_page.create_course_toolbar_view_component.click_create_course_button()
     courses_list_page.toolbar_view.check_visible()
-    courses_list_page.check_visible_course_card(
+    courses_list_page.course_view.check_visible(
         index=0,
         title="Playwright",
         max_score="100",
