@@ -2,8 +2,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 from enum import Enum
 from typing import Self
 from pydantic import EmailStr, FilePath, HttpUrl, DirectoryPath
-import platform
-import sys
+
 class Browser(str, Enum):
     WEBKIT = "webkit"
     FIREFOX = "firefox"
@@ -48,8 +47,7 @@ class Settings(BaseSettings):
         tracing_dir = DirectoryPath("./tracing")
         allure_results_dir = DirectoryPath("./allure-results")
         browser_state_file = FilePath("browser-state.json")
-        os_info = f'{platform.system()}, {platform.release()}'
-        python_version = f'{sys.version}'
+
 
         videos_dir.mkdir(exist_ok=True)
         tracing_dir.mkdir(exist_ok=True)
