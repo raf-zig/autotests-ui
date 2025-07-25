@@ -10,7 +10,8 @@ def initialize_playwright_page(
         browser_type: Browser,
         storage_state: str | None = None
 ) -> Page:
-    browser = playwright[browser_type].launch(headless=settings.headless)
+    #browser = playwright[browser_type].launch(headless=settings.headless)
+    browser = playwright[browser_type].launch(headless=True)
     context = browser.new_context(
         storage_state=storage_state,
         record_video_dir=settings.videos_dir,
