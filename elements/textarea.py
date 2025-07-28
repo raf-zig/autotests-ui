@@ -17,10 +17,7 @@ class Textarea(BaseElement):
         return super().get_locator(nth, **kwargs).locator('textarea').first
 
     def get_raw_locator(self, nth: int = 0, **kwargs) -> str:
-        # Переопределяем метод формирования XPath-селектора:
-        #  - сначала получаем общий селектор блока
-        #  - затем уточняем путь до самого <input>, добавляя '//input'
-        # Это нужно, чтобы трекер точно знал, с каким элементом шло взаимодействие
+
         return f'{super().get_raw_locator(**kwargs)}//input'
 
     def fill(self, value: str, nth: int = 0, **kwargs):
