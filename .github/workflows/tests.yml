@@ -85,10 +85,10 @@ name: UI tests
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   run-tests:
